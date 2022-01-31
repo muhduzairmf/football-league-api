@@ -1,0 +1,58 @@
+LEAGUE
+- Premier League 
+- Serie A
+- Ligue 1
+- La Liga
+- Bundesliga
+api/league [get]
+api/league/:id [get]
+api/league [post]
+api/league/:id/name [patch]
+api/league/:id [delete]
+
+TEAM
+- Liverpool
+- Juventus
+- PSG
+- Real Madrid
+- Bayern Munich
+api/team [get]
+api/team/:id [get]
+api/team [post]
+api/team/:id/name [patch]
+api/team/:id/stadium [patch]
+api/team/:id [delete]
+
+COMPANY
+- Nike (Liverpool, PSG)
+- Adidas (Juventus, Real Madrid, Bayern Munich)
+- Fly Emirates (Real Madrid)
+api/company [get]
+api/company/:id [get]
+api/company [post]
+api/company/:id/sponsored-team [patch]
+api/company/:id [delete]
+
+PLAYERS
+- Salah, Mane, Jota
+- Dybala, Chiesa, Arthur
+- Mbappe, Messi, Neymar
+- Modric, Kroos, Valverde
+- Gnabry, Sane, Kimmich
+api/player [get]
+api/player/:id [get]
+api/player [post]
+api/player/:id/team [patch]
+api/player/:id [delete]
+
+MANAGER
+- Klopp
+- Allegri
+- Pochettino
+- Zidane
+- Nagelsmann
+api/manager [get]
+api/manager/:id [get]
+api/manager [post]
+api/manager/:id/team [patch]
+api/manager/:id [delete]
