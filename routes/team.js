@@ -102,7 +102,7 @@ router.patch("/:id/manager", async (req, res) => {
     const { id } = req.params
     const { manager_id } = req.body
 
-    const validateManager = await prisma.team.findUnique({
+    const validateManager = await prisma.manager.findUnique({
         where: {
             id: parseInt(manager_id)
         }
