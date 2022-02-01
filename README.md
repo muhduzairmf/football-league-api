@@ -50,7 +50,7 @@ then, it will listening port on `3405`
 `GET` : `http://localhost:3405/api/company`        
 `GET` : `http://localhost:3405/api/company/:id`      
 `POST` : `http://localhost:3405/api/company`       
-`PATCH` : `http://localhost:3405/api/company/sponsored-team`       
+`PATCH` : `http://localhost:3405/api/company/:id/sponsored-team`       
 `DELETE` : `http://localhost:3405/api/company/:id`      
 
 `GET` : `http://localhost:3405/api/player`       
