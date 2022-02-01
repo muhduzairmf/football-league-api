@@ -4,28 +4,86 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 // /api/player
-router.get("/", (req, res) => {
-    res.sendStatus(200);
+router.get("/", async (req, res) => {
+    const allPlayers = await prisma.player.findMany()
+
+    res.json(allPlayers)
 });
 
 // /api/player/:id
-router.get("/:id", (req, res) => {
-    res.sendStatus(200);
+router.get("/:id", async (req, res) => {
+    const { id } = req.params
+
+    const thePlayer = await prisma.player.findUnique({
+        where: {
+            id: parseInt(id)
+        }
+    })
+
+    if (!thePlayer) {
+        res.json({ message: "Not found any player" })
+        return
+    }
+
+    res.json(thePlayer)
 });
 
 // /api/player
-router.post("/", (req, res) => {
-    res.sendStatus(200);
+router.post("/", async (req, res) => {
+    const { name, age, nationality, team_id } = req.body
+
+    const newPlayer = await prisma.player.create({
+        data: {
+            name,
+            age,
+            nationality,
+            team_id: parseInt(team_id)
+        }
+    })
+
+    res.json(newPlayer)
 });
 
 // /api/player/:id/team
-router.patch("/:id/team", (req, res) => {
-    res.sendStatus(200);
+router.patch("/:id/team", async (req, res) => {
+    const { id } = req.params
+    const { team_id } = req.body
+
+    const updatedPlayer = await prisma.player.update({
+        where: {
+            id: parseInt(id)
+        },
+        data: {
+            team_id: parseInt(team_id)
+        }
+    })
+
+    if (!updatedPlayer) {
+        res.json({ message: "Not found any player" })
+        return
+    }
+
+    res.json(updatedPlayer)
 });
 
 // /api/player/:id
-router.delete("/:id", (req, res) => {
-    res.sendStatus(200);
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params
+
+    const deletedPlayer = await prisma.player.delete({
+        where: {
+            id: parseInt(id)
+        }
+    })
+
+    if (!deletedPlayer) {
+        res.json({ message: "Not found any player"})
+        return
+    }
+
+    const currentPlayers = await prisma.player.findMany()
+
+    res.json(currentPlayers)
 });
 
 module.exports = router;
