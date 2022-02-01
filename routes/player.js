@@ -44,10 +44,43 @@ router.post("/", async (req, res) => {
     res.json(newPlayer)
 });
 
+// /api/player/:id/age
+router.patch("/:id/age", async (req, res) => {
+    const { id } = req.params
+    const { age } = req.body
+
+    const updatedPlayer = await prisma.player.update({
+        where: {
+            id: parseInt(id)
+        },
+        data: {
+            age: parseInt(age)
+        }
+    })
+
+    if (!updatedPlayer) {
+        res.json({ message: "Not found any player" })
+        return
+    }
+
+    res.json(updatedPlayer)
+})
+
 // /api/player/:id/team
 router.patch("/:id/team", async (req, res) => {
     const { id } = req.params
     const { team_id } = req.body
+
+    const validateTeam = await prisma.team.findUnique({
+        where: {
+            id: parseInt(team_id)
+        }
+    })
+
+    if (!validateTeam) {
+        res.json({ message: "Not found any team"})
+        return
+    }
 
     const updatedPlayer = await prisma.player.update({
         where: {
