@@ -76,8 +76,8 @@ This API is still under development process. List below is the current to do pro
 - [x] Complete API routes for League
 - [x] Complete API routes for Team
 - [x] Complete API routes for Company
-- [ ] Complete API routes for Player
-- [ ] Complete API routes for Manager
+- [x] Complete API routes for Player
+- [x] Complete API routes for Manager
 - [ ] Testing all API routes using Insomnia       
 
 
