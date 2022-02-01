@@ -45,6 +45,7 @@ then, it will listening port on `3405`
 `POST` : `http://localhost:3405/api/team`         
 `PATCH` : `http://localhost:3405/api/team/:id/name`         
 `PATCH` : `http://localhost:3405/api/team/:id/stadium`        
+`PATCH` : `http://localhost:3405/api/team/:id/manager`        
 `DELETE` : `http://localhost:3405/api/team/:id`           
 
 `GET` : `http://localhost:3405/api/company`        
@@ -58,27 +59,15 @@ then, it will listening port on `3405`
 `GET` : `http://localhost:3405/api/player`       
 `GET` : `http://localhost:3405/api/player/:id`       
 `POST` : `http://localhost:3405/api/player`        
+`PATCH` : `http://localhost:3405/api/player/:id/age`       
 `PATCH` : `http://localhost:3405/api/player/:id/team`       
 `DELETE` : `http://localhost:3405/api/player/:id`          
 
 `GET` : `http://localhost:3405/api/manager`        
 `GET` : `http://localhost:3405/api/manager/:id`       
 `POST` : `http://localhost:3405/api/manager`        
-`PATCH` : `http://localhost:3405/api/manager/:id/team`         
+`PATCH` : `http://localhost:3405/api/manager/:id/age`         
 `DELETE` : `http://localhost:3405/api/manager/:id`         
 
 
-## Notice       
 
-This API is still under development process. List below is the current to do process which is the main target of this API Development.
-
-- [x] Construct the main code for Express API
-- [x] Complete API routes for League
-- [x] Complete API routes for Team
-- [x] Complete API routes for Company
-- [x] Complete API routes for Player
-- [x] Complete API routes for Manager
-- [ ] Testing all API routes using Insomnia       
-
-
-**Side note :** If this API is completely developed, this Notice will be removed.
