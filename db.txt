@@ -21,6 +21,7 @@ api/team/:id [get]
 api/team [post]
 api/team/:id/name [patch]
 api/team/:id/stadium [patch]
+api/team/:id/manager [patch]
 api/team/:id [delete]
 
 COMPANY
@@ -56,5 +57,6 @@ MANAGER
 api/manager [get]
 api/manager/:id [get]
 api/manager [post]
+api/manager/:id/age [patch]
 api/manager/:id/team [patch]
 api/manager/:id [delete]
