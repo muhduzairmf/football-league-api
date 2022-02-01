@@ -71,7 +71,7 @@ then, it will listening port on `3405`
 This API is still under development process. List below is the current to do process which is the main target of this API Development.
 
 - [x] Construct the main code for Express API
-- [ ] Complete API routes for League
+- [x] Complete API routes for League
 - [ ] Complete API routes for Team
 - [ ] Complete API routes for Company
 - [ ] Complete API routes for Player
