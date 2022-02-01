@@ -30,6 +30,8 @@ COMPANY
 api/company [get]
 api/company/:id [get]
 api/company [post]
+api/company/:id/name [patch]
+api/company/:id/headquarters [patch]
 api/company/:id/sponsored-team [patch]
 api/company/:id [delete]
 

@@ -50,6 +50,8 @@ then, it will listening port on `3405`
 `GET` : `http://localhost:3405/api/company`        
 `GET` : `http://localhost:3405/api/company/:id`      
 `POST` : `http://localhost:3405/api/company`       
+`PATCH` : `http://localhost:3405/api/company/:id/name`       
+`PATCH` : `http://localhost:3405/api/company/:id/headquarters`       
 `PATCH` : `http://localhost:3405/api/company/:id/sponsored-team`       
 `DELETE` : `http://localhost:3405/api/company/:id`      
 
@@ -72,8 +74,8 @@ This API is still under development process. List below is the current to do pro
 
 - [x] Construct the main code for Express API
 - [x] Complete API routes for League
-- [ ] Complete API routes for Team
-- [ ] Complete API routes for Company
+- [x] Complete API routes for Team
+- [x] Complete API routes for Company
 - [ ] Complete API routes for Player
 - [ ] Complete API routes for Manager
 - [ ] Testing all API routes using Insomnia       
