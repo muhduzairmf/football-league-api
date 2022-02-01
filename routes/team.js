@@ -97,6 +97,39 @@ router.patch("/:id/stadium", async (req, res) => {
     res.json(updatedTeam)
 })
 
+// /api/team/:id/manager
+router.patch("/:id/manager", async (req, res) => {
+    const { id } = req.params
+    const { manager_id } = req.body
+
+    const validateManager = await prisma.team.findUnique({
+        where: {
+            id: parseInt(manager_id)
+        }
+    })
+
+    if (!validateManager) {
+        res.json({ message: "Not found any manager" })
+        return
+    }
+
+    const updatedTeam = await prisma.team.update({
+        where: {
+            id: parseInt(id)
+        },
+        data: {
+            manager_id: parseInt(manager_id)
+        }
+    })
+
+    if (!updatedTeam) {
+        res.json({ message: "Not found any team" })
+        return
+    }
+
+    res.json(updatedTeam)
+})
+
 // /api/team/:id
 router.delete("/:id", async (req, res) => {
     const { id } = req.params
