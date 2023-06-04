@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -25,7 +25,7 @@ model Team {
   league_id Int
   players Player[]
   manager Manager @relation(fields: [manager_id], references: [id])
-  manager_id Int
+  manager_id Int @unique
   company Company[]
 }
 
